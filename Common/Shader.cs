@@ -101,8 +101,11 @@ namespace LearnOpenTK.Common
             GL.GetShader(shader, ShaderParameter.CompileStatus, out var code);
             if (code != (int) All.True)
             {
-                // We can use `GL.GetShaderInfoLog(shader)` to get information about the error.
-                throw new Exception($"Error occurred whilst compiling Shader({shader})");
+	            var version = GL.GetString(StringName.ShadingLanguageVersion);
+	            var version2 = GL.GetString(StringName.Version);
+	            var log = GL.GetShaderInfoLog(shader);
+				// We can use `GL.GetShaderInfoLog(shader)` to get information about the error.
+				throw new Exception($"Error occurred whilst compiling Shader({shader})");
             }
         }
         

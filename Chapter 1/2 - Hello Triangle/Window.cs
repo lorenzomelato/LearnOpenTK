@@ -19,7 +19,7 @@ namespace LearnOpenTK
         private readonly float[] _vertices =
         {
             -0.5f, -0.5f, 0.0f, // Bottom-left vertex
-             0.5f, -0.5f, 0.0f, // Bottom-right vertex
+             0.3f, -0.3f, 0.0f, // Bottom-right vertex
              0.0f,  0.5f, 0.0f  // Top vertex
         };
 
@@ -37,10 +37,11 @@ namespace LearnOpenTK
         private Shader _shader;
 
 
-        public Window(int width, int height, string title) : base(width, height, GraphicsMode.Default, title)
+        public Window(int width, int height, string title)
+			: base(width, height, GraphicsMode.Default, title, GameWindowFlags.Default, DisplayDevice.Default, 3, 3, GraphicsContextFlags.Default)
         {
-            
-        }
+
+		}
 
         
         // Now, we start initializing OpenGL.

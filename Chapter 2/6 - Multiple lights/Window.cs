@@ -95,7 +95,8 @@ namespace LearnOpenTK
         private bool _firstMove = true;
         private Vector2 _lastPos;
 
-        public Window(int width, int height, string title) : base(width, height, GraphicsMode.Default, title) { }
+        public Window(int width, int height, string title) : base(width, height, GraphicsMode.Default, title, GameWindowFlags.Default, DisplayDevice.Default, 3, 3, GraphicsContextFlags.Default)
+        { }
 
         
         protected override void OnLoad(EventArgs e)
